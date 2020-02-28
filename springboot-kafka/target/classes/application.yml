@@ -1,0 +1,19 @@
+spring:
+  kafka:
+    # ������
+    consumer:
+      group-id: foo
+      auto-offset-reset: earliest
+      bootstrap-servers: 127.0.0.1:9092
+    # ������
+    producer:
+      bootstrap-servers: 127.0.0.1:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      retries: 2 # ���ô���0��ֵ����ͻ��˻Ὣ����ʧ�ܵļ�¼���·���
+      batch-size: 16384 # ÿ������������Ϣ������
+      buffer-memory: 33554432
+    listener:
+      missing-topics-fatal: false #���Ѽ����ӿڼ��������ⲻ����ʱ��Ĭ�ϻᱨ��
+server:
+  port: 8082

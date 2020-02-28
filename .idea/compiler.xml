@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="nacos-provide" />
+        <module name="consul" />
+        <module name="springboot-kafka" />
+        <module name="Nacos" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kafka-consumer" target="1.5" />
+      <module name="kakfa-producer" target="1.5" />
+      <module name="nacos-provide" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="consul" options="-parameters" />
+      <module name="nacos-provide" options="-parameters" />
+      <module name="springboot-kafka" options="-parameters" />
+    </option>
+  </component>
+</project>
