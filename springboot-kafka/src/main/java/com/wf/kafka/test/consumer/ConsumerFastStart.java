@@ -36,7 +36,7 @@ public class ConsumerFastStart {
             ConsumerRecords<String, String> records =
                     consumer.poll(Duration.ofMillis(1000));
             for (ConsumerRecord<String, String> record : records) {
-                System.out.println(record.value());
+                System.out.println("=====消费消息：==== "+record.value());
             }
         }
     }
