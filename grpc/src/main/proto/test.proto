@@ -1,0 +1,23 @@
+syntax = "proto3";//默认proto2，可以显示指定proto的版本
+package wf;//包名
+option java_package = "com.wf";// 指定通过该proto文件产生的那些java类的存放路径
+option java_outer_classname = "HelloServiceProto";//要生成Java类的名称
+option java_multiple_files = true;//编译后会生成多个Message类，并没有被包含在HelloWorldServiceProto.java文件中,反之,生成单一HelloWorldServiceProto.java文件
+//请求参数
+message HelloRequest {
+  //1.2.3表示参数的序号，从上到下依次递增就好，每个参数前面可以定义这个参数的类型
+    string name = 1;
+    string sex = 2;
+    bytes entity = 3;
+}
+//响应参数
+message HelloReply {
+ //定义方式和上面的request一样
+    string message = 1;
+}
+//服务端接口类
+service HelloTest {
+    //服务端接口方法，固定写法，rpc表示该方法是rpc调用时候实际调用的那个方法
+    //在本例中该方法为SayHello，入参为上面咱们自己定义的HelloRequest，返回为上面定义的HelloReply
+    rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
