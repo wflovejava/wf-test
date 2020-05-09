@@ -1,4 +1,4 @@
-package com.kafka.java.client.test.cousmer;
+package com.kafka.java.client.test.producter;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
