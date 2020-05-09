@@ -1,0 +1,23 @@
+// 定义一个接口 有个say方法
+syntax = "proto3";
+package wf;//包名
+option java_multiple_files = true; // 编译后会生成多个Message类
+option java_package = "com.wf.helloword"; // 指定通过该proto文件产生的那些java类的存放路径
+option java_outer_classname = "HelloWordProto"; // 要生成的java类名
+option objc_class_prefix = "WF";
+
+// 服务端接口类
+service HelloWordService{
+// 定义服务端接口方法
+rpc Say(HelloWordRequest) returns (HelloWordReply) {}
+}
+
+// 请求参数
+message HelloWordRequest {
+string name = 1;
+}
+
+//响应参数
+message HelloWordReply {
+string message = 1;
+}
