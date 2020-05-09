@@ -7,7 +7,7 @@ import io.grpc.StatusRuntimeException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.logging.Level;
 
 /**
@@ -89,9 +89,10 @@ public class Client {
         try {
             // 客户端逻辑实现
             Person p = new Person();
-            p.setName("小浦闻鱼跃");
+            p.setName("wf");
             p.setAge(18);
-            client.callRemoteApi(p, "小浦闻鱼跃");
+
+            client.callRemoteApi(p, "wf");
         } finally {
             client.shutdown();
         }
